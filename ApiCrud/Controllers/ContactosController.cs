@@ -37,6 +37,7 @@ namespace ApiCrud.Controllers
             return Ok(contactoItem);
         }
 
+
         //POST api/contactos
         [HttpPost]
 
@@ -47,6 +48,7 @@ namespace ApiCrud.Controllers
             return CreatedAtAction(nameof(ObtenerContactoItems), new { id = item.Id }, item);//El Id es el del modelo y id es del id que se recibe en el metodo
 
         }
+
 
         //PUT API/Contactor/5 EL Put nos manda todos los campos por eso se demora, para que no se demore hare el patch
         [HttpPut("{id}")]
@@ -61,6 +63,7 @@ namespace ApiCrud.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
 
         //DELETE
         [HttpDelete("{id}")]
